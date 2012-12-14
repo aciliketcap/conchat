@@ -169,7 +169,6 @@ int getWholeLog(int sd, struct messagelog *climsglog) {
 	writeMessageLog(climsglog, readbuf, readFromServer);
 }
 
-//same as getWholeLog (but blocking) until we implement signals
 int readMessage(int sd, struct messagelog *climsglog) {
 	//read server log in MSG_LEN chunks
 	char readbuf[MSG_LEN];
