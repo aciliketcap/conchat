@@ -1,6 +1,6 @@
-This is a threaded server and client implementation. (It is not a real chat server)
+This is a threaded server and client implementation which sends and receives strings between clients. (It is not a real chat server.)
 
-It was developed as a training project. I wanted to use pthreads and sockets.
+It was developed as a training project. I wanted to use pthreads and sockets. Code may use many small improvements and I wrote them down as TODO comments inside the code.
 
 It took too much time and I have so many things to say about how it works but I will write a blog post about this in my blog (and give a link here). To summarize:
 
@@ -9,7 +9,7 @@ It took too much time and I have so many things to say about how it works but I 
 3. One last thing about C strings is they give way to security flaws. I didn't paid special attention to that and I suspect some parts are open to stack overflows using special packets.
 4. I used threaded approach to learn about threads. Polling/event handling is another possibility. The threads however are using blocked I/O and won't eat CPU cycles when server is idle.
 5. Threads are not managed. It definitely needs to create threads dynamically and keep track of them. A linked list might do the job I think.
-6. Again it is not a real chat server. It just take messages from clients, notes them down and sends them to all other clients. Messages are just C strings, there is no protocol like IRC or something.
+6. Again it is not a real chat server. It just takes messages from clients, notes them down and sends them to all other clients. Messages are just C strings, there is no protocol like IRC or something.
 
 You can find more things that needs to be implemented in server.h file's beginning.
 
